@@ -389,43 +389,70 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
                       </h1>
                     </div>
                     <div>
-                      <Button
-                        variant="outline"
-                        className={`w-full transition-transform duration-300 ease-in-out transform ${
-                          registrationClosed ||
-                          isRegistered ||
-                          !isRegistrationOpen ||
-                          (!registrationClosed && !isRegistrationOpen)
-                            ? "opacity-50 cursor-not-allowed"
-                            : "hover:scale-105"
-                        }`}
-                        disabled={
-                          registrationClosed ||
-                          isRegistered ||
-                          !isRegistrationOpen ||
-                          (!registrationClosed && !isRegistrationOpen)
-                        }
-                        onClick={isUser}
-                      >
-                        {registrationClosed
-                          ? "Registration Closed ❌"
-                          : isRegistered
-                            ? eventData[0]?.event_participants.find(
-                                (register: any) =>
-                                  register.participant_email === userData?.email
-                              )?.is_approved === null
-                              ? "Registered ⏳ Waiting For Approval"
-                              : eventData[0]?.event_participants.find(
-                                    (register: any) =>
-                                      register.participant_email ===
-                                      userData?.email
-                                  )?.is_approved
-                                ? "Registration Approved ✔️"
-                                : "Registration Rejected ❌"
-                            : !registrationClosed && !isRegistrationOpen
-                              ? "Registration Upcoming ⏳"
-                              : "Register Now 🎉"}
-                      </Button>
+                      {event.isRegistration == "redirect" ? (
+                        <Link href={event.redirection_link}>
+                          <Button
+                            variant="outline"
+                            className={`w-full transition-transform duration-300 ease-in-out transform ${
+                              registrationClosed ||
+                              !isRegistrationOpen ||
+                              (!registrationClosed && !isRegistrationOpen)
+                                ? "opacity-50 cursor-not-allowed"
+                                : "hover:scale-105"
+                            }`}
+                            disabled={
+                              registrationClosed ||
+                              !isRegistrationOpen ||
+                              (!registrationClosed && !isRegistrationOpen)
+                            }
+                          >
+                            {registrationClosed
+                              ? "Registration Closed ❌"
+                              : !registrationClosed && !isRegistrationOpen
+                                ? "Registration Upcoming ⏳"
+                                : "Register Now 🎉"}
+                          </Button>
+                        </Link>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          className={`w-full transition-transform duration-300 ease-in-out transform ${
+                            registrationClosed ||
+                            isRegistered ||
+                            !isRegistrationOpen ||
+                            (!registrationClosed && !isRegistrationOpen)
+                              ? "opacity-50 cursor-not-allowed"
+                              : "hover:scale-105"
+                          }`}
+                          disabled={
+                            registrationClosed ||
+                            isRegistered ||
+                            !isRegistrationOpen ||
+                            (!registrationClosed && !isRegistrationOpen)
+                          }
+                          onClick={isUser}
+                        >
+                          {registrationClosed
+                            ? "Registration Closed ❌"
+                            : isRegistered
+                              ? eventData[0]?.event_participants.find(
+                                  (register: any) =>
+                                    register.participant_email ===
+                                    userData?.email
+                                )?.is_approved === null
+                                ? "Registered ⏳ Waiting For Approval"
+                                : eventData[0]?.event_participants.find(
+                                      (register: any) =>
+                                        register.participant_email ===
+                                        userData?.email
+                                    )?.is_approved
+                                  ? "Registration Approved ✔️"
+                                  : "Registration Rejected ❌"
+                              : !registrationClosed && !isRegistrationOpen
+                                ? "Registration Upcoming ⏳"
+                                : "Register Now 🎉"}
+                        </Button>
+                      )}
                     </div>
                     <div>
                       {isRegistered && eventEnded ? (

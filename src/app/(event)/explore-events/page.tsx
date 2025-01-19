@@ -29,7 +29,7 @@ const Page: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [category, setCategory] = useState("");
   const [sortByPrice, setSortByPrice] = useState("");
-  const [eventStatus, setEventStatus] = useState("active");
+  const [eventStatus, setEventStatus] = useState("all");
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
   const [likedEvents, setLikedEvents] = useState<{ [key: string]: boolean }>(

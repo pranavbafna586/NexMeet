@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { toast } from "sonner";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { userDetails } from "../../../action/userDetails";
 
@@ -35,7 +35,7 @@ import { uploadImage } from "../../../action/uploadSupabase";
 import { KindeUserBase } from "@kinde-oss/kinde-auth-nextjs/types";
 import { Loader2 } from "lucide-react";
 import { convertBlobUrlToFile } from "@/action/convertBlobUrlToFile";
-import { format, isBefore } from "date-fns";
+import { format, isBefore, set } from "date-fns";
 
 const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 const ACCEPTED_IMAGE_TYPES = [
@@ -80,6 +80,8 @@ const formSchema = z
       .min(1, { message: "Team size is required." })
       .regex(/^[1-9]\d*$/, { message: "Team size must be a positive number." }),
     isEventFree: z.enum(["0", "paid"]),
+    isRegistration: z.enum(["onplatform", "rediret"]),
+    redirection_link: z.string().optional(),
     account_holder_name: z.string().optional(),
     upi_id: z.string().optional(),
     event_amount: z.string().optional(),
@@ -194,6 +196,7 @@ export default function AddEvent() {
   const [isPending, startTransition] = useTransition();
   const [file, setFile] = useState<File | null>(null);
   const [fee, setFee] = useState("free");
+  const [isRegistration, setIsRegistration] = useState("onplatform");
 
   const today = format(new Date(), "yyyy-MM-dd'T'HH:mm");
 
@@ -216,6 +219,7 @@ export default function AddEvent() {
       event_duration: "",
       team_size: "",
       isEventFree: "0",
+      isRegistration: "onplatform",
       account_holder_name: "",
       upi_id: "",
       event_amount: "",
@@ -317,6 +321,11 @@ export default function AddEvent() {
           event_duration: parseInt(values.event_duration, 10),
           team_size: parseInt(values.team_size, 10),
           isEventFree: values.isEventFree,
+          isRegistration: values.isRegistration,
+          redirection_link:
+            values.isRegistration === "onplatform"
+              ? undefined
+              : values.redirection_link,
           account_holder_name:
             values.isEventFree === "0" ? undefined : values.account_holder_name,
           upi_id: values.isEventFree === "0" ? undefined : values.upi_id,
@@ -585,6 +594,67 @@ export default function AddEvent() {
                 </FormItem>
               )}
             />
+
+            <div className="flex flex-col justify-start gap-4">
+              <FormField
+                control={form.control}
+                name="isRegistration"
+                render={({ field }) => (
+                  <FormItem className="flex justify-start items-center gap-4">
+                    <FormLabel className="text-base">
+                      Registration Type :
+                    </FormLabel>
+                    <FormControl>
+                      <select
+                        {...field}
+                        className="bg-black border-2 border-white text-white py-1 px-2 rounded-md"
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          field.onChange(value);
+                          setIsRegistration(value);
+                        }}
+                      >
+                        <option value="onplatform">On Platform</option>
+                        <option value="redirect">Redirection</option>
+                      </select>
+                    </FormControl>
+                    <FormMessage className="text-red-400" />
+                  </FormItem>
+                )}
+              />
+              {isRegistration === "onplatform" ? (
+                <h1>Event Is Under Platfrom</h1>
+              ) : (
+                <h1>Event Is Under Redirection</h1>
+              )}
+
+              {isRegistration === "onplatform" ? (
+                ""
+              ) : (
+                <div className="flex flex-col gap-4">
+                  <FormField
+                    control={form.control}
+                    name="redirection_link"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-base">
+                          Enter Redirection Link:
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Enter Redirection Link"
+                            {...field}
+                            className="bg-black border-white text-white"
+                          />
+                        </FormControl>
+                        <FormMessage className="text-red-400" />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+              )}
+            </div>
+
             <div className="flex flex-col justify-start gap-4">
               <FormField
                 control={form.control}
