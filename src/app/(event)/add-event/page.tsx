@@ -80,7 +80,7 @@ const formSchema = z
       .min(1, { message: "Team size is required." })
       .regex(/^[1-9]\d*$/, { message: "Team size must be a positive number." }),
     isEventFree: z.enum(["0", "paid"]),
-    isRegistration: z.enum(["onplatform", "rediret"]),
+    isRegistration: z.enum(["onplatform", "redirect"),
     redirection_link: z.string().optional(),
     account_holder_name: z.string().optional(),
     upi_id: z.string().optional(),
