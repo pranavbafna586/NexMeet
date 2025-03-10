@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Unauthorized() {
   return (
-    <div className="  w-full h-auto bg-black text-white py-[8rem] px-[1rem] flex flex-col justify-center items-center">
+    <div className="  w-full h-auto bg-[#15132A] text-white py-[8rem] px-[1rem] flex flex-col justify-center items-center">
       <div className="max-w-md w-full space-y-8 text-center">
         <div className="animate-pulse">
           <Lock className="mx-auto h-12 w-12" />

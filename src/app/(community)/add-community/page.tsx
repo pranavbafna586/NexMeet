@@ -135,7 +135,7 @@ export default function AddCommunityForm() {
   };
 
   return (
-    <div className="w-full min-h-screen bg-black text-white py-[8rem] px-4">
+    <div className="w-full min-h-screen bg-[#15132A] text-white py-[8rem] px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-6xl font-extrabold text-center mb-8">
           Add Your Community
@@ -150,7 +150,7 @@ export default function AddCommunityForm() {
                 <Input
                   {...field}
                   id="communityName"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -172,7 +172,7 @@ export default function AddCommunityForm() {
                   id="logo"
                   type="file"
                   onChange={(e) => onChange(e.target.files?.[0])}
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -187,7 +187,7 @@ export default function AddCommunityForm() {
                 <Input
                   {...field}
                   id="tagline"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -202,39 +202,45 @@ export default function AddCommunityForm() {
               name="category"
               control={control}
               render={({ field }) => (
-                <div className="w-full p-2 text-white bg-black border border-white rounded-md">
+                <div className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md">
                   <select
                     {...field}
                     className="w-full bg-transparent border-none text-white placeholder-gray-400 focus:outline-none"
                   >
-                    <option value="" className="bg-black text-white">
+                    <option value="" className="bg-[#15132A] text-white">
                       Select a category
                     </option>
-                    <option value="technology" className="bg-black text-white">
+                    <option
+                      value="technology"
+                      className="bg-[#15132A] text-white"
+                    >
                       Technology
                     </option>
-                    <option value="sports" className="bg-black text-white">
+                    <option value="sports" className="bg-[#15132A] text-white">
                       Sports
                     </option>
-                    <option value="arts" className="bg-black text-white">
+                    <option value="arts" className="bg-[#15132A] text-white">
                       Arts
                     </option>
-                    <option value="education" className="bg-black text-white">
+                    <option
+                      value="education"
+                      className="bg-[#15132A] text-white"
+                    >
                       Education
                     </option>
-                    <option value="social" className="bg-black text-white">
+                    <option value="social" className="bg-[#15132A] text-white">
                       Social
                     </option>
                     <option
                       value="professional"
-                      className="bg-black text-white"
+                      className="bg-[#15132A] text-white"
                     >
                       Professional
                     </option>
-                    <option value="hobby" className="bg-black text-white">
+                    <option value="hobby" className="bg-[#15132A] text-white">
                       Hobby
                     </option>
-                    <option value="other" className="bg-black text-white">
+                    <option value="other" className="bg-[#15132A] text-white">
                       Other
                     </option>
                   </select>
@@ -257,7 +263,7 @@ export default function AddCommunityForm() {
                 <Input
                   {...field}
                   id="contactInfo"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -275,7 +281,7 @@ export default function AddCommunityForm() {
                 <Input
                   {...field}
                   id="location"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -293,7 +299,7 @@ export default function AddCommunityForm() {
                 <Input
                   {...field}
                   id="website"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -311,7 +317,7 @@ export default function AddCommunityForm() {
                 <Textarea
                   {...field}
                   id="about"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -329,7 +335,7 @@ export default function AddCommunityForm() {
                 <Textarea
                   {...field}
                   id="mission"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -347,7 +353,7 @@ export default function AddCommunityForm() {
                 <Textarea
                   {...field}
                   id="benefits"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -365,7 +371,7 @@ export default function AddCommunityForm() {
                 <Textarea
                   {...field}
                   id="events"
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -385,7 +391,7 @@ export default function AddCommunityForm() {
                   id="media"
                   type="file"
                   onChange={(e) => onChange(e.target.files?.[0])}
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />
@@ -403,7 +409,7 @@ export default function AddCommunityForm() {
                   type="number"
                   min="50"
                   onChange={(e) => onChange(parseInt(e.target.value, 10))}
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               )}
             />

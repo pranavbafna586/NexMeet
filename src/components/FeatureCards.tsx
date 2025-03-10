@@ -222,7 +222,7 @@ const FeatureCards: React.FC = () => {
   const isFirstCard = currentIndex === 0;
   const isLastCard = currentIndex === cards.length - visibleCards;
   return (
-    <div className="h-screen w-full bg-black flex flex-col items-center justify-center px-4">
+    <div className="h-screen w-full bg-[#15132A] flex flex-col items-center justify-center px-4">
       <div className="w-full max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-white">

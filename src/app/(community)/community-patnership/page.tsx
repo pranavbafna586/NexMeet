@@ -193,7 +193,7 @@ function CommunityPartners() {
 
   return (
     <div
-      className={`${spaceGrotesk.className} w-full min-h-screen bg-black text-white py-[8rem] px-4`}
+      className={`${spaceGrotesk.className} w-full min-h-screen bg-[#15132A] text-white py-[8rem] px-4`}
     >
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]" />
 

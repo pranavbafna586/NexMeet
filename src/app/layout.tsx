@@ -2,8 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { DM_Mono } from "next/font/google";
-import { Space_Grotesk } from "next/font/google";
+import { Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -11,13 +10,9 @@ import { Toaster } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/Scroll-to-top";
 import ClientServiceWorker from "./ClientServiceWorker";
 
-const mono = DM_Mono({
+const SourceCodePro = Source_Code_Pro({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  variable: "--font-dm_mono",
 });
-
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 const baseUrl =
   process.env.NEXT_PUBLIC_BASE_URL || "https://nexmeet-lake.vercel.app";
@@ -99,7 +94,7 @@ export default function RootLayout({
         />
         <title>NexMeet</title>
       </head>
-      <body suppressHydrationWarning={true} className={spaceGrotesk.className}>
+      <body suppressHydrationWarning={true} className={SourceCodePro.className}>
         <Analytics />
         <SpeedInsights />
         <Toaster

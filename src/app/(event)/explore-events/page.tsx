@@ -48,7 +48,8 @@ const Page: React.FC = () => {
     async function getData() {
       let { data, error }: any = await supabase
         .from("event_details")
-        .select("*,event_images(event_id,url)");
+        .select("*,event_images(event_id,url)")
+        .order("event_startdate", { ascending: false });
       if (error) {
         console.error("Error fetching event details:", error);
       } else {
@@ -345,7 +346,7 @@ const Page: React.FC = () => {
   return (
     <>
       <div
-        className={`${spaceGrotesk.className} w-full h-auto bg-black text-white py-[8rem] ${
+        className={`${spaceGrotesk.className} w-full h-auto bg-[#15132A] text-white py-[8rem] ${
           loading ? `px-0` : `px-4`
         }`}
       >
@@ -354,7 +355,7 @@ const Page: React.FC = () => {
           <div className="flex flex-col items-center justify-end md:items-start md:justify-start md:ml-0 md:mt-4">
             <Link href="/event-calendar">
               <button
-                className="relative bg-black text-white px-4 py-2 rounded-full font-bold text-base border border-white transition-all duration-300 ease-in-out group mt-3 mb-0"
+                className="relative bg-[#15132A] text-white px-4 py-2 rounded-full font-bold text-base border border-white transition-all duration-300 ease-in-out group mt-3 mb-0"
                 onMouseMove={handleMouseMove}
                 style={
                   {
@@ -371,10 +372,10 @@ const Page: React.FC = () => {
         </div>
         <div className="w-full my-[3rem] flex flex-col gap-4 justify-end">
           <div>
-            <label className="flex items-center gap-2 bg-black border border-white w-full rounded-md px-4">
+            <label className="flex items-center gap-2 bg-[#15132A] border border-white w-full rounded-md px-4">
               <input
                 type="text"
-                className="bg-black text-white w-full p-2 rounded-md border-0 outline-none"
+                className="bg-[#15132A] text-white w-full p-2 rounded-md border-0 outline-none"
                 placeholder="Search Name Or Location"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -397,13 +398,13 @@ const Page: React.FC = () => {
           <div className="w-full flex justify-end items-center flex-col md:flex-row gap-4">
             <div className="flex flex-row justify-center gap-4">
               <DatePicker
-                className="date-picker w-[8rem] border border-white p-2 rounded-md bg-black text-white"
+                className="date-picker w-[8rem] border border-white p-2 rounded-md bg-[#15132A] text-white"
                 selected={startDate}
                 onChange={(date) => date && handleStartDateChange(date)}
                 placeholderText="Start Date"
               />
               <DatePicker
-                className="date-picker w-[8rem] border border-white p-2 rounded-md bg-black text-white"
+                className="date-picker w-[8rem] border border-white p-2 rounded-md bg-[#15132A] text-white"
                 selected={endDate}
                 onChange={(date) => date && handleEndDateChange(date)}
                 placeholderText="End Date"
@@ -412,7 +413,7 @@ const Page: React.FC = () => {
             </div>{" "}
             <div className="grid grid-cols-2 md:grid-cols-4 justify-center gap-4">
               <select
-                className=" border border-white p-2 rounded-md bg-black text-white"
+                className=" border border-white p-2 rounded-md bg-[#15132A] text-white"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               >
@@ -424,7 +425,7 @@ const Page: React.FC = () => {
                 <option value="conference">Conference</option>
               </select>
               <select
-                className=" border border-white p-2 rounded-md bg-black text-white"
+                className=" border border-white p-2 rounded-md bg-[#15132A] text-white"
                 value={numberOfLikes}
                 onChange={(e) => setNumberOfLikes(e.target.value)}
               >
@@ -433,7 +434,7 @@ const Page: React.FC = () => {
                 <option value="low">Lowest Likes</option>
               </select>
               <select
-                className=" border border-white p-2 rounded-md bg-black text-white"
+                className=" border border-white p-2 rounded-md bg-[#15132A] text-white"
                 value={sortByPrice}
                 onChange={(e) => setSortByPrice(e.target.value)}
               >
@@ -442,7 +443,7 @@ const Page: React.FC = () => {
                 <option value="high">Highest Price</option>
               </select>
               <select
-                className=" border border-white p-2 rounded-md bg-black text-white"
+                className=" border border-white p-2 rounded-md bg-[#15132A] text-white"
                 value={eventStatus}
                 onChange={(e) => setEventStatus(e.target.value)}
               >
@@ -464,7 +465,7 @@ const Page: React.FC = () => {
                 const isApproved = event.is_approved;
                 return (
                   <div
-                    className={`w-[350px] mx-auto bg-black text-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out transform ${
+                    className={`w-[350px] mx-auto bg-[#15132A] text-white rounded-xl shadow-md overflow-hidden transition duration-300 ease-in-out transform ${
                       event.is_approved
                         ? "cursor-pointer hover:scale-105"
                         : "opacity-50 cursor-not-allowed"
@@ -485,7 +486,7 @@ const Page: React.FC = () => {
                         <div className="flex flex-col items-center justify-center p-2 ">
                           <HeartIcon
                             onClick={() => handleLikeToggle(event.id)}
-                            className={`h-8 w-8 transition-all duration-300 bg-black rounded-full ${
+                            className={`h-8 w-8 transition-all duration-300 bg-[#15132A] rounded-full ${
                               likedEvents[event.id]
                                 ? "text-red-500 filter drop-shadow-[0_0_10px_rgba(255,0,0,0.5)]"
                                 : "text-white"
@@ -572,7 +573,7 @@ const Page: React.FC = () => {
                       {event.is_approved ? (
                         <Link href={`/explore-events/${event.id}`}>
                           <button
-                            className={`${event.is_approved == true ? `cursor-pointer` : `cursor-not-allowed`} w-full bg-black border text-teal-500 text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out`}
+                            className={`${event.is_approved == true ? `cursor-pointer` : `cursor-not-allowed`} w-full bg-[#15132A] border text-teal-500 text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out`}
                             disabled={event.is_approved == false}
                           >
                             View Details
@@ -580,7 +581,7 @@ const Page: React.FC = () => {
                         </Link>
                       ) : (
                         <button
-                          className={`${event.is_approved == true ? `cursor-pointer` : `cursor-not-allowed`} w-full bg-black border text-teal-500 text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out`}
+                          className={`${event.is_approved == true ? `cursor-pointer` : `cursor-not-allowed`} w-full bg-[#15132A] border text-teal-500 text-sm font-semibold py-2 px-4 rounded-lg transition duration-300 ease-in-out`}
                           disabled={event.is_approved == false}
                         >
                           View Details

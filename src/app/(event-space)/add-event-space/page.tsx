@@ -147,7 +147,7 @@ export default function AddEvent() {
 
   return (
     <>
-      <div className="  w-full h-auto bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
+      <div className="  w-full h-auto bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col flex-wrap w-full gap-10 md:w-2/3"
@@ -165,7 +165,7 @@ export default function AddEvent() {
                 max: 999,
                 min: 39,
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -180,7 +180,7 @@ export default function AddEvent() {
                 max: 999,
                 min: 39,
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -194,7 +194,7 @@ export default function AddEvent() {
                 max: 999,
                 min: 38,
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -204,7 +204,7 @@ export default function AddEvent() {
               type="number"
               placeholder="Enter Space Capacity"
               {...register("capacity", { required: true })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -216,7 +216,7 @@ export default function AddEvent() {
               type="number"
               placeholder="Enter Space Price (INR)"
               {...register("price_per_hour", { required: true })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -226,7 +226,7 @@ export default function AddEvent() {
               type="tel"
               placeholder="Enter Owner Contact"
               {...register("owner_contact", { required: true })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -236,7 +236,7 @@ export default function AddEvent() {
               type="text"
               placeholder="Enter Amenities (Comma Separated)"
               {...register("amenities", { required: true })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
             <p>Enter Amenities Comma Seprated</p>
           </div>
@@ -250,7 +250,7 @@ export default function AddEvent() {
               ref={imageInputRef}
               onChange={(e) => handleImageChange(e)}
               disabled={isPending}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
             <p className="text-red-500">{isError}</p>
           </div>
@@ -276,7 +276,7 @@ export default function AddEvent() {
 
           <button
             type="submit"
-            className="w-full p-2 text-white bg-black border border-white rounded-md hover:bg-white hover:text-black"
+            className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md hover:bg-white hover:text-black"
             disabled={isPending}
           >
             {isPending ? "Submitting..." : "Submit"}

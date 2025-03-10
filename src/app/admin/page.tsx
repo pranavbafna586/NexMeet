@@ -173,7 +173,7 @@ export default function Admin() {
   }
 
   return isAuthenticated && isSuperAdmin ? (
-    <div className="w-full h-auto bg-black text-white py-[8rem] px-4 flex flex-col">
+    <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] px-4 flex flex-col">
       <div className="flex flex-col justify-center items-center gap-4">
         <h1 className="text-3xl font-bold text-center my-10">
           Administer Events & Communities
@@ -186,7 +186,7 @@ export default function Admin() {
           {events.map((event) => (
             <Card
               key={event.id}
-              className="bg-black w-full flex flex-col h-[auto]"
+              className="bg-[#15132A] w-full flex flex-col h-[auto]"
             >
               <CardHeader>
                 <CardTitle>{event.event_title}</CardTitle>
@@ -229,7 +229,7 @@ export default function Admin() {
           {communities.map((community) => (
             <Card
               key={community.id}
-              className="bg-black w-full flex flex-col h-[auto]"
+              className="bg-[#15132A] w-full flex flex-col h-[auto]"
             >
               <CardHeader>
                 <CardTitle>

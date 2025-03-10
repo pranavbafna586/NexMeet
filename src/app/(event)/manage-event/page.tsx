@@ -100,7 +100,7 @@ export default function EditEvent() {
   }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip bg-black text-white p-2 rounded shadow-lg">
+        <div className="custom-tooltip bg-[#15132A] text-white p-2 rounded shadow-lg">
           <p className="label">{`${payload[0].name}`}</p>
           <p className="intro">{`Category: ${payload[0].payload.category}`}</p>
         </div>
@@ -158,7 +158,7 @@ export default function EditEvent() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="w-full h-auto bg-black text-white py-[8rem] px-4 flex flex-col">
+        <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] px-4 flex flex-col">
           <div className="flex flex-col justify-center items-center gap-4">
             <h1 className="text-3xl font-bold text-center my-10">
               Edit Your Events
@@ -172,7 +172,7 @@ export default function EditEvent() {
               {events.map((event) => (
                 <Card
                   key={event.id}
-                  className="bg-black w-full flex flex-col h-[auto]"
+                  className="bg-[#15132A] w-full flex flex-col h-[auto]"
                 >
                   <CardHeader>
                     <CardTitle>{event.event_title}</CardTitle>
@@ -195,7 +195,7 @@ export default function EditEvent() {
                             Delete Event
                           </Button>
                         </AlertDialogTrigger>
-                        <AlertDialogContent className="bg-black text-white p-4">
+                        <AlertDialogContent className="bg-[#15132A] text-white p-4">
                           <AlertDialogHeader>
                             <AlertDialogTitle>
                               Are you absolutely sure?

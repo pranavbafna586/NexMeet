@@ -47,7 +47,7 @@ function Page() {
 
   return (
     <div
-      className={`${spaceGrotesk.className} w-full min-h-screen bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-start items-center gap-24 relative overflow-hidden`}
+      className={`${spaceGrotesk.className} w-full min-h-screen bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-start items-center gap-24 relative overflow-hidden`}
     >
       <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]" />
 

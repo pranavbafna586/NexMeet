@@ -413,7 +413,7 @@ export default function AddEvent() {
   }
 
   return (
-    <div className="bg-black text-white pt-[6.5rem] pb-16">
+    <div className="bg-[#15132A] text-white pt-[6.5rem] pb-16">
       <div className="container mx-auto p-6 space-y-8 w-full md:w-2/3">
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-10">
           Organise Event
@@ -430,7 +430,7 @@ export default function AddEvent() {
                     <Input
                       placeholder="Enter Event Title"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -449,7 +449,7 @@ export default function AddEvent() {
                     <Textarea
                       placeholder="Enter Event Description"
                       {...field}
-                      className="bg-black border-white text-white min-h-28"
+                      className="bg-[#15132A] border-white text-white min-h-28"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -473,7 +473,7 @@ export default function AddEvent() {
                     <Input
                       placeholder="Enter Event Location"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -493,7 +493,7 @@ export default function AddEvent() {
                       type="datetime-local"
                       {...field}
                       min={today}
-                      className="w-full p-2 text-white bg-black border border-white rounded-md"
+                      className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -513,7 +513,7 @@ export default function AddEvent() {
                       type="datetime-local"
                       {...field}
                       min={today}
-                      className="w-full p-2 text-white bg-black border border-white rounded-md"
+                      className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -531,7 +531,7 @@ export default function AddEvent() {
                       type="datetime-local"
                       {...field}
                       min={today}
-                      className="w-full p-2 text-white bg-black border border-white rounded-md"
+                      className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -549,7 +549,7 @@ export default function AddEvent() {
                       type="datetime-local"
                       {...field}
                       min={today}
-                      className="w-full p-2 text-white bg-black border border-white rounded-md"
+                      className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -568,7 +568,7 @@ export default function AddEvent() {
                       placeholder="Enter Event Duration (In hours)"
                       {...field}
                       min="1"
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -586,7 +586,7 @@ export default function AddEvent() {
                       type="number"
                       placeholder="Enter Team Size"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                       min="1"
                     />
                   </FormControl>
@@ -607,7 +607,7 @@ export default function AddEvent() {
                     <FormControl>
                       <select
                         {...field}
-                        className="bg-black border-2 border-white text-white py-1 px-2 rounded-md"
+                        className="bg-[#15132A] border-2 border-white text-white py-1 px-2 rounded-md"
                         onChange={(e) => {
                           const value = e.target.value;
                           field.onChange(value);
@@ -644,7 +644,7 @@ export default function AddEvent() {
                           <Input
                             placeholder="Enter Redirection Link"
                             {...field}
-                            className="bg-black border-white text-white"
+                            className="bg-[#15132A] border-white text-white"
                           />
                         </FormControl>
                         <FormMessage className="text-red-400" />
@@ -667,7 +667,7 @@ export default function AddEvent() {
                     <FormControl>
                       <select
                         {...field}
-                        className="bg-black border-2 border-white text-white py-1 px-2 rounded-md"
+                        className="bg-[#15132A] border-2 border-white text-white py-1 px-2 rounded-md"
                         onChange={(e) => {
                           const value = e.target.value;
                           field.onChange(value);
@@ -704,7 +704,7 @@ export default function AddEvent() {
                             <Input
                               placeholder="Enter account holder name"
                               {...field}
-                              className="bg-black border-white text-white"
+                              className="bg-[#15132A] border-white text-white"
                             />
                           </FormControl>
                           <FormMessage className="text-red-400" />
@@ -722,7 +722,7 @@ export default function AddEvent() {
                               type="text"
                               placeholder="Enter Upi Id"
                               {...field}
-                              className="bg-black border-white text-white"
+                              className="bg-[#15132A] border-white text-white"
                             />
                           </FormControl>
                           <FormMessage className="text-red-400" />
@@ -742,7 +742,7 @@ export default function AddEvent() {
                               type="number"
                               placeholder="Enter Amount"
                               {...field}
-                              className="bg-black border-white text-white"
+                              className="bg-[#15132A] border-white text-white"
                             />
                           </FormControl>
                           <FormMessage className="text-red-400" />
@@ -766,7 +766,7 @@ export default function AddEvent() {
                     <Input
                       placeholder="Enter organizer name"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -786,7 +786,7 @@ export default function AddEvent() {
                       type="tel"
                       placeholder="Enter contact number"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -804,11 +804,11 @@ export default function AddEvent() {
                     defaultValue={field.value}
                   >
                     <FormControl>
-                      <SelectTrigger className="bg-black border-white text-white">
+                      <SelectTrigger className="bg-[#15132A] border-white text-white">
                         <SelectValue placeholder="Select a category" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent className="bg-black border-white text-white">
+                    <SelectContent className="bg-[#15132A] border-white text-white">
                       <SelectItem value="technical">Technical</SelectItem>
                       <SelectItem value="sports">Sports</SelectItem>
                       <SelectItem value="cultural">Cultural</SelectItem>
@@ -835,7 +835,7 @@ export default function AddEvent() {
                         onPosterChange(e);
                         onChange(e.target.files);
                       }}
-                      className="w-full p-2 text-white bg-black border border-white rounded-md"
+                      className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -864,7 +864,7 @@ export default function AddEvent() {
                     <Input
                       placeholder="Enter Event Tags (Comma Separated)"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />
@@ -883,7 +883,7 @@ export default function AddEvent() {
                     <Input
                       placeholder="Enter Social Links (Comma Separated)"
                       {...field}
-                      className="bg-black border-white text-white"
+                      className="bg-[#15132A] border-white text-white"
                     />
                   </FormControl>
                   <FormMessage className="text-red-400" />

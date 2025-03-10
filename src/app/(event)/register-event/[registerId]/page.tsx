@@ -134,7 +134,7 @@ function Registerevent() {
 
   if (isRegistred) {
     return (
-      <div className="w-full h-screen bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center gap-10">
+      <div className="w-full h-screen bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center gap-10">
         <h1 className="text-2xl font-extrabold text-center md:text-4xl">
           You have already registered for{" "}
           <Link href={`/explore-events/${registerId}`} className="text-red-500">
@@ -151,7 +151,7 @@ function Registerevent() {
 
   return isAuthenticated ? (
     <>
-      <div className="  w-full h-auto bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
+      <div className="  w-full h-auto bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col flex-wrap w-full gap-10 md:w-2/3"
@@ -182,7 +182,7 @@ function Registerevent() {
                 max: 30,
                 maxLength: 31,
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
           <div className="flex flex-col w-full gap-2">
@@ -191,7 +191,7 @@ function Registerevent() {
               type="email"
               placeholder="Participant Email"
               {...register("participant_email", { required: true })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
           <div className="flex flex-col w-full gap-2">
@@ -206,7 +206,7 @@ function Registerevent() {
                   message: "Contact number must be 10 to 15 digits",
                 },
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
             {errors.participant_contact && (
               <span style={{ color: "red" }}>Invalid contact number</span>
@@ -226,7 +226,7 @@ function Registerevent() {
                   message: "Invalid URL",
                 },
               })}
-              className="w-full p-2 text-white bg-black border border-white rounded-md"
+              className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
             />
           </div>
 
@@ -259,7 +259,7 @@ function Registerevent() {
                   type="text"
                   placeholder="UPI Transaction ID"
                   {...register("transaction_id", { required: true })}
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               </div>
 
@@ -271,7 +271,7 @@ function Registerevent() {
                   type="text"
                   placeholder="Account Holder Name"
                   {...register("account_holder_name", { required: true })}
-                  className="w-full p-2 text-white bg-black border border-white rounded-md"
+                  className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
                 />
               </div>
             </>

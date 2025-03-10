@@ -123,7 +123,7 @@ function EventResponsesPage() {
       {loading ? (
         <Loading />
       ) : (
-        <div className="w-full min-h-screen bg-black text-white py-[8rem] px-0 md:px-8 flex flex-col gap-10">
+        <div className="w-full min-h-screen bg-[#15132A] text-white py-[8rem] px-0 md:px-8 flex flex-col gap-10">
           <h1 className="mb-6 text-3xl font-bold text-center">
             Event Responses
           </h1>
@@ -201,10 +201,10 @@ function EventResponsesPage() {
             </div>
 
             <div className="px-8">
-              <label className="flex items-center w-full gap-2 px-4 bg-black border border-white rounded-md">
+              <label className="flex items-center w-full gap-2 px-4 bg-[#15132A] border border-white rounded-md">
                 <input
                   type="text"
-                  className="w-full p-2 text-white bg-black border-0 rounded-md outline-none"
+                  className="w-full p-2 text-white bg-[#15132A] border-0 rounded-md outline-none"
                   placeholder="Search by email"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}

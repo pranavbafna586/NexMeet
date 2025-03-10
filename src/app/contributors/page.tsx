@@ -41,7 +41,7 @@ const ContributorsPage = () => {
   }
 
   return (
-    <main className="flex-grow w-full bg-black text-white py-[8rem] px-10 flex flex-col justify-start items-center gap-12">
+    <main className="flex-grow w-full bg-[#15132A] text-white py-[8rem] px-10 flex flex-col justify-start items-center gap-12">
       <h1 className="text-5xl md:text-6xl font-bold mb-12 text-center tracking-tight">
         Contributors
       </h1>

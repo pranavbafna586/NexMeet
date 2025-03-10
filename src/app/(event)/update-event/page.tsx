@@ -182,7 +182,7 @@ export default function UpdateEvent() {
   }
 
   return isAuthenticated ? (
-    <div className="w-full h-auto bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
+    <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -215,7 +215,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_title: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_title && (
                 <p className="text-red-500">{fieldErrors.event_title}</p>
@@ -231,7 +231,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_description: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_description && (
                 <p className="text-red-500">{fieldErrors.event_description}</p>
@@ -247,7 +247,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_location: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_location && (
                 <p className="text-red-500">{fieldErrors.event_location}</p>
@@ -273,7 +273,7 @@ export default function UpdateEvent() {
                     event_registration_startdate: e.target.value,
                   })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_registration_startdate && (
                 <p className="text-red-500">
@@ -301,7 +301,7 @@ export default function UpdateEvent() {
                     event_registration_enddate: e.target.value,
                   })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_registration_enddate && (
                 <p className="text-red-500">
@@ -322,7 +322,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_startdate: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_startdate && (
                 <p className="text-red-500">{fieldErrors.event_startdate}</p>
@@ -341,7 +341,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_enddate: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_enddate && (
                 <p className="text-red-500">{fieldErrors.event_enddate}</p>
@@ -359,7 +359,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_duration: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_duration && (
                 <p className="text-red-500">{fieldErrors.event_duration}</p>
@@ -375,7 +375,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, team_size: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.team_size && (
                 <p className="text-red-500">{fieldErrors.team_size}</p>
@@ -391,7 +391,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_formlink: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_formlink && (
                 <p className="text-red-500">{fieldErrors.event_formlink}</p>
@@ -408,7 +408,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_price: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               <p>If Free Enter 0</p>
               {fieldErrors.event_price && (
@@ -425,7 +425,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, organizer_name: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.organizer_name && (
                 <p className="text-red-500">{fieldErrors.organizer_name}</p>
@@ -441,7 +441,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, organizer_email: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.organizer_email && (
                 <p className="text-red-500">{fieldErrors.organizer_email}</p>
@@ -458,7 +458,7 @@ export default function UpdateEvent() {
                   const value = e.target.value;
                   setEvent({ ...event, organizer_contact: value });
                 }}
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.organizer_contact && (
                 <p className="text-red-500">{fieldErrors.organizer_contact}</p>
@@ -474,7 +474,7 @@ export default function UpdateEvent() {
                 onChange={(e) =>
                   setEvent({ ...event, event_category: e.target.value })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_category && (
                 <p className="text-red-500">{fieldErrors.event_category}</p>
@@ -495,7 +495,7 @@ export default function UpdateEvent() {
                       .map((tag) => tag.trim()),
                   })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_tags && (
                 <p className="text-red-500">{fieldErrors.event_tags}</p>
@@ -517,7 +517,7 @@ export default function UpdateEvent() {
                       .map((link) => link.trim()),
                   })
                 }
-                className="w-full p-2 text-white bg-black border border-white rounded-md"
+                className="w-full p-2 text-white bg-[#15132A] border border-white rounded-md"
               />
               {fieldErrors.event_social_links && (
                 <p className="text-red-500">{fieldErrors.event_social_links}</p>

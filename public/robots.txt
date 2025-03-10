@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.nexmeet.social/
+Host: https://www.nexmeet.social
 
 # Sitemaps
 Sitemap: https://www.nexmeet.social/sitemap.xml

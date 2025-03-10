@@ -27,9 +27,9 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="w-full h-auto bg-black text-white py-[8rem] flex flex-col">
+    <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] flex flex-col">
       <section
-        className={`${spaceGrotesk.className} bg-black text-white min-h-screen relative overflow-hidden`}
+        className={`${spaceGrotesk.className} bg-[#15132A] text-white min-h-screen relative overflow-hidden`}
       >
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]" />
 
@@ -103,8 +103,7 @@ export default function AboutUs() {
             <ProfileCard
               name="Tejas Nasre"
               role="Founder & Full Stack Developer"
-              imageSrc="https://imgs.search.brave.com/gpyA6z0GSbz__p922if_Pk9XuUQDayLz1fuRzy9NlrM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90ZWph/c25hc3JlLnRlY2gv/YXNzZXRzL2ltYWdl/cy9teS1hdmF0YXIu/anBn
-"
+              imageSrc="https://jzhgfowuznosxtwzkbkx.supabase.co/storage/v1/object/public/hero_images//1735971510461.jpeg"
               description="The visionary behind our platform. Tejas conceived this idea in his second year of B.Tech and has been the driving force in bringing it to life. With a year of full-stack development experience, he's turning his dream into our shared reality."
             />
             <ProfileCard

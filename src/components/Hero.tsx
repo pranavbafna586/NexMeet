@@ -2,7 +2,6 @@
 import React from "react";
 import CountUp from "react-countup";
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards";
-import { BackgroundBeamsWithCollision } from "../components/ui/background-beams-with-collision";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -13,6 +12,10 @@ import FeatureCards from "./FeatureCards";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import axios from "axios";
 import Faq1 from "./faq";
+import { motion } from "framer-motion";
+import { Highlight, HeroHighlight } from "@/components/ui/hero-highlight";
+import GradientText from "./ui/gradienttext";
+import GrindMotion from "./GrindMotion";
 
 const Hero: React.FC = () => {
   const { isAuthenticated } = useKindeBrowserClient();
@@ -58,65 +61,108 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <div className="h-full w-full bg-black text-white pt-10">
-        <BackgroundBeamsWithCollision>
-          <div className="flex flex-col justify-center items-center gap-12">
-            <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-white dark:text-white font-sans tracking-tight">
-              What&apos;s cooler than Networking?{" "}
-              <div className="mono relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
-                <div className="mono absolute left-0 top-[1px] bg-clip-text bg-no-repeat text-transparent bg-gradient-to-r py-4 from-purple-500 via-violet-500 to-pink-500 [text-shadow:0_0_rgba(0,0,0,0.1)]">
-                  <span className="">Nothing dude.</span>
-                </div>
-                <div className="mono relative bg-clip-text text-transparent bg-no-repeat bg-gradient-to-r from-purple-500 via-violet-500 to-pink-500 py-4">
-                  <span className="">Nothing dude.</span>
-                </div>
-              </div>
-            </h2>
-            <div className="flex flex-row justify-center items-center gap-8">
-              <Link
-                href="/explore-events"
-                className="mono transition ease-in-out duration-300 hover:scale-105 border-white border-double border-2 hover:border-white hover:shadow-[5px_5px_0px_0px_rgb(255,255,255)] rounded-md p-1 md:p-2"
-              >
-                Explore Events
-              </Link>
-              {isAuthenticated ? (
-                <Link
-                  href="/dashboard"
-                  className="mono transition ease-in-out duration-300 hover:scale-105 border-white border-double border-2 hover:border-white hover:shadow-[5px_5px_0px_0px_rgb(255,255,255)] rounded-md p-1 md:p-2"
-                >
-                  Dashboard
+      <div className="h-full w-full bg-[#15132A] text-white pt-10">
+        <HeroHighlight>
+          <motion.h1
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: [20, -5, 0],
+            }}
+            transition={{
+              duration: 0.5,
+              ease: [0.4, 0.0, 0.2, 1],
+            }}
+            className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto "
+          >
+            <div className="flex flex-col justify-center items-center gap-8">
+              <h1 className="text-3xl text-[#f6edff] md:text-6xl">
+                What&apos;s cooler than Networking ?
+              </h1>
+              <Highlight className="text-[#f6edff]">Nothing dude.</Highlight>
+              <div className="flex flex-row justify-center items-center gap-10">
+                <Link href="/explore-events">
+                  <GradientText
+                    colors={[
+                      "#40ffaa",
+                      "#4079ff",
+                      "#40ffaa",
+                      "#4079ff",
+                      "#40ffaa",
+                    ]}
+                    animationSpeed={3}
+                    showBorder={true}
+                    className="custom-class p-2 text-sm"
+                  >
+                    Explore Events
+                  </GradientText>
                 </Link>
-              ) : (
-                <RegisterLink className="mono transition ease-in-out duration-300 hover:scale-105 border-white border-double border-2 hover:border-white hover:shadow-[5px_5px_0px_0px_rgb(255,255,255)] rounded-md p-1 md:p-2">
-                  Register
-                </RegisterLink>
-              )}
+
+                {isAuthenticated ? (
+                  <Link href="/dashboard">
+                    <GradientText
+                      colors={[
+                        "#40ffaa",
+                        "#4079ff",
+                        "#40ffaa",
+                        "#4079ff",
+                        "#40ffaa",
+                      ]}
+                      animationSpeed={3}
+                      showBorder={true}
+                      className="custom-class p-2 text-sm"
+                    >
+                      Dashboard
+                    </GradientText>
+                  </Link>
+                ) : (
+                  <RegisterLink>
+                    <GradientText
+                      colors={[
+                        "#40ffaa",
+                        "#4079ff",
+                        "#40ffaa",
+                        "#4079ff",
+                        "#40ffaa",
+                      ]}
+                      animationSpeed={3}
+                      showBorder={true}
+                      className="custom-class p-2 text-sm"
+                    >
+                      Register
+                    </GradientText>
+                  </RegisterLink>
+                )}
+              </div>
+              <div className="text-center">
+                <span className="text-lg text-[#bab1c8]">
+                  ⭐ Stars: {repoData.stars}
+                </span>
+              </div>
             </div>
-            <button className="bg-neutral-950 text-neutral-400 border border-neutral-400 border-b-4 font-medium overflow-hidden relative px-2 py-1 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group">
-              <span className="bg-neutral-400 shadow-neutral-400 absolute -top-[150%] left-0 inline-flex w-80 h-[5px] rounded-md opacity-50 group-hover:top-[150%] duration-500 shadow-[0_0_10px_10px_rgba(0,0,0,0.3)]"></span>
-              <Link href={"https://chat.whatsapp.com/HD7kdkjzSP8Lf1nY6iTpnN"}>
-                Join Community
-              </Link>
-            </button>
-            <div className="text-center">
-              <span className="mr-4">⭐ Stars: {repoData.stars}</span>
-            </div>
-          </div>
-        </BackgroundBeamsWithCollision>
+          </motion.h1>
+        </HeroHighlight>
 
         {/* Feature cards section */}
-        <div className="flex flex-col items-center justify-center w-full h-screen bg-black sm:flex sm:flex-row">
+        <div className="flex flex-col items-center justify-center w-full h-screen bg-[#15132A] sm:flex sm:flex-row">
           <FeatureCards />
         </div>
 
-        <div className="py-20 flex flex-col antialiased bg-black items-center gap-10 justify-center relative overflow-hidden">
-          <h1 className="mono m-10 text-center text-4xl">
+        <div className="py-20 flex flex-col antialiased bg-[#15132A] items-center gap-10 justify-center relative overflow-hidden">
+          <h1 className="m-10 text-center text-4xl">
             Nexmeet Community Partner
           </h1>
           <InfiniteMovingCards items={data} direction="right" speed="slow" />
         </div>
 
-        <div className="w-auto bg-black py-20 px-4">
+        <div>
+          <GrindMotion />
+        </div>
+
+        <div className="w-auto bg-[#15132A] py-20 px-4">
           <h1 className="text-center text-4xl mb-10 text-white">
             Community Reviews
           </h1>
@@ -167,7 +213,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full px-4 py-20 bg-black">
+        <div className="w-full px-4 py-20 bg-[#15132A]">
           <div className="mx-auto max-w-screen-xl py-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">

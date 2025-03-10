@@ -267,7 +267,7 @@ function Page({ params }: { params: { id: any } }) {
   }
 
   return isAuthenticated && isOrganizer ? (
-    <div className="w-full min-h-screen bg-black text-white py-[8rem] px-0 md:px-8 flex flex-col gap-10">
+    <div className="w-full min-h-screen bg-[#15132A] text-white py-[8rem] px-0 md:px-8 flex flex-col gap-10">
       <h1 className="text-5xl md:text-7xl font-bold mb-12 text-center tracking-tight font-spaceGrotesk">
         Participant Details
       </h1>
@@ -318,10 +318,10 @@ function Page({ params }: { params: { id: any } }) {
       </div>
 
       <div className="px-2">
-        <label className="flex items-center w-full gap-2 px-4 bg-black border border-white rounded-md">
+        <label className="flex items-center w-full gap-2 px-4 bg-[#15132A] border border-white rounded-md">
           <input
             type="text"
-            className="w-full p-2 text-white bg-black border-0 rounded-md outline-none"
+            className="w-full p-2 text-white bg-[#15132A] border-0 rounded-md outline-none"
             placeholder="Search by name or email"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

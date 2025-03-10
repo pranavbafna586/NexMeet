@@ -120,7 +120,7 @@ export default function Page() {
 
   return isAuthenticated ? (
     <>
-      <div className="w-full h-auto bg-black text-white py-[8rem] flex flex-col">
+      <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] flex flex-col">
         <h1 className="text-5xl md:text-7xl font-bold mb-12 text-center tracking-tight font-spaceGrotesk">
           Your Dashboard
         </h1>

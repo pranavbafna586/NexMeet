@@ -21,7 +21,9 @@ const EventCalendarPage: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
-  const [view, setView] = useState<"month" | "week" | "work_week" | "day" | "agenda">("month");
+  const [view, setView] = useState<
+    "month" | "week" | "work_week" | "day" | "agenda"
+  >("month");
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
@@ -106,20 +108,21 @@ const EventCalendarPage: React.FC = () => {
 
   const handleNavigate = (newDate: Date) => setDate(newDate);
 
-  const handleViewChange = (newView: typeof Views[keyof typeof Views]) => setView(newView);
+  const handleViewChange = (newView: (typeof Views)[keyof typeof Views]) =>
+    setView(newView);
 
   if (loading) {
     return <Loading />;
   }
 
   return (
-    <div className="w-full h-auto bg-black text-white py-[8rem] px-4 flex flex-col">
+    <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] px-4 flex flex-col">
       <div className="flex flex-col items-center justify-center gap-4">
         <h1 className="my-10 text-3xl font-bold text-center">
           Edit Your Events
         </h1>
         <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-1 rounded-lg shadow-lg w-full max-w-6xl">
-          <div className="bg-black rounded-lg p-4">
+          <div className="bg-[#15132A] rounded-lg p-4">
             <Calendar
               localizer={localizer}
               events={events}
@@ -135,16 +138,14 @@ const EventCalendarPage: React.FC = () => {
               className="custom-calendar"
               components={{
                 event: (props) => (
-                  <div className="text-white">
-                    {props.title}
-                  </div>
+                  <div className="text-white">{props.title}</div>
                 ),
               }}
             />
           </div>
         </div>
         {selectedEvent && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-[#15132A] bg-opacity-50 flex items-center justify-center z-50 p-4">
             <div className="bg-gray-800 rounded-lg shadow-xl relative w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col">
               <div className="p-4 sm:p-6 overflow-y-auto flex-grow">
                 <button

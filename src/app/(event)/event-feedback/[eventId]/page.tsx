@@ -107,7 +107,7 @@ export default function ResponseForm() {
   };
 
   return (
-    <div className="w-full h-auto bg-black text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
+    <div className="w-full h-auto bg-[#15132A] text-white py-[8rem] px-[2rem] flex flex-col justify-center items-center">
       <h1 className="text-2xl font-bold mb-4">Feedback Form for {formTitle}</h1>
       <Form {...form}>
         <form
@@ -127,7 +127,7 @@ export default function ResponseForm() {
                   <Input
                     placeholder=""
                     {...field}
-                    className="bg-black border-white text-white"
+                    className="bg-[#15132A] border-white text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-red-400" />
@@ -231,7 +231,7 @@ export default function ResponseForm() {
                   <Input
                     placeholder=""
                     {...field}
-                    className="bg-black border-white text-white"
+                    className="bg-[#15132A] border-white text-white"
                   />
                 </FormControl>
                 <FormMessage className="text-red-400" />
@@ -242,7 +242,7 @@ export default function ResponseForm() {
           {/* Submit button */}
           <Button
             type="submit"
-            className="w-full border border-white p-2 rounded-md bg-black text-white hover:bg-white hover:text-black"
+            className="w-full border border-white p-2 rounded-md bg-[#15132A] text-white hover:bg-white hover:text-black"
             disabled={isPending}
           >
             {isPending ? "Submitting..." : "Submit Feedback"}

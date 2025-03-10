@@ -10,22 +10,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { userDetails } from "../action/userDetails";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
-import { Comment } from "@/components/ui/comment";
 import { FaXTwitter } from "react-icons/fa6";
 
-import {
-  PhoneIcon,
-  MailIcon,
-  User,
-  ArrowRight,
-  Tags,
-  Trash,
-} from "lucide-react";
+import { PhoneIcon, MailIcon, User, ArrowRight, Trash } from "lucide-react";
 import { toast } from "sonner";
 
 import {
   TwitterShareButton,
-  TwitterIcon,
   WhatsappShareButton,
   WhatsappIcon,
 } from "react-share";
@@ -262,7 +253,7 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
 
   return (
     <>
-      <div className="w-full h-auto bg-black text-white py-[5rem] md:py-[8rem] px-[1rem] md:px-[2rem] flex justify-center">
+      <div className="w-full h-auto bg-[#15132A] text-white py-[5rem] md:py-[8rem] px-[1rem] md:px-[2rem] flex justify-center">
         {eventData.map((event: any) => {
           return (
             <div
@@ -277,13 +268,15 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
                 <div className="w-full md:w-[80%] py-6 md:p-10">
                   {img.map((i: any) => {
                     return (
-                      <div key={i}>
+                      <div
+                        key={i}
+                        className="relative w-full h-96 md:h-[500px]"
+                      >
                         <Image
                           src={i}
                           alt="event image"
-                          className="w-full"
-                          width={500}
-                          height={500}
+                          className="object-contain"
+                          layout="fill"
                           loading="lazy"
                         />
                       </div>
@@ -296,7 +289,7 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
                 <div className="">
                   <div className="w-full border border-white rounded-lg p-6 flex flex-col gap-2 md:gap-4">
                     <h1 className="text-2xl font-extrabold">About The Event</h1>
-                    <p className="text-justify leading-relaxed">
+                    <p className="text-justify leading-relaxed break-words max-w-full overflow-hidden">
                       {event.event_description}
                     </p>
                     <div className="w-full flex flex-col md:flex-row gap-4">
@@ -570,7 +563,7 @@ const EventPageClient = ({ eventsId }: { eventsId: string }) => {
                     value={comment}
                     onChange={handleCommentChange}
                     placeholder="Leave a comment..."
-                    className="w-full bg-black p-2 border border-gray-300 rounded"
+                    className="w-full bg-[#15132A] p-2 border border-gray-300 rounded"
                     rows={4}
                   />
                   <Button

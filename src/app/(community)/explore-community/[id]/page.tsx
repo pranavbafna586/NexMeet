@@ -59,7 +59,7 @@ const CommunityDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white py-[8rem] px-4">
+    <div className="min-h-screen bg-[#15132A] text-white py-[8rem] px-4">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col items-center">
           <Image

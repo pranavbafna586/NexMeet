@@ -49,7 +49,7 @@ export default function Page() {
   );
 
   return (
-    <div className="min-h-screen bg-black text-white transition-colors duration-300 py-[8rem] px-10">
+    <div className="min-h-screen bg-[#15132A] text-white transition-colors duration-300 py-[8rem] px-10">
       <div
         className={`${spaceGrotesk.className} flex justify-center items-center`}
       >
@@ -64,7 +64,7 @@ export default function Page() {
           placeholder="SEARCH COMMUNITIES..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full dark:bg-black dark:text-white text-black text-xl font-bold px-4 py-2 rounded-full border-4 border-black dark:border-white focus:outline-none focus:border-2 focus:border-black dark:focus:border-white"
+          className="w-full dark:bg-[#15132A] dark:text-white text-black text-xl font-bold px-4 py-2 rounded-full border-4 border-black dark:border-white focus:outline-none focus:border-2 focus:border-black dark:focus:border-white"
         />
       </div>
 
@@ -79,13 +79,13 @@ export default function Page() {
               {filteredCommunities.map((community) => (
                 <div
                   key={community.id}
-                  className="dark:bg-black bg-white text-black dark:text-white p-4 rounded-xl border-4 border-black dark:border-white"
+                  className="dark:bg-[#15132A] bg-white text-black dark:text-white p-4 rounded-xl border-4 border-black dark:border-white"
                 >
-                  <div className="w-20 h-20 mx-auto mb-6 overflow-hidden rounded-full bg-black dark:bg-black border-2 border-white">
+                  <div className="w-20 h-20 mx-auto mb-6 overflow-hidden rounded-full bg-[#15132A] dark:bg-[#15132A] border-2 border-white">
                     <Image
                       src={`https://jzhgfowuznosxtwzkbkx.supabase.co/storage/v1/object/public/community-logos/${community.logo_url}`}
                       alt={`${community.community_name} logo`}
-                      className="w-full h-full object-contain filter invert dark:invert-0 bg-black"
+                      className="w-full h-full object-contain filter invert dark:invert-0 bg-[#15132A]"
                       width={128}
                       height={128}
                     />
@@ -97,7 +97,7 @@ export default function Page() {
                     {community.tagline}
                   </p>
                   <div className="flex justify-center mb-4">
-                    <span className="bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-lg font-bold rounded-full">
+                    <span className="bg-[#15132A] dark:bg-white text-white dark:text-black px-4 py-2 text-lg font-bold rounded-full">
                       {community.category}
                     </span>
                   </div>
@@ -106,7 +106,7 @@ export default function Page() {
                   </p>
                   <Link
                     href={`/explore-community/${community.id}`}
-                    className="block w-full bg-black dark:bg-white text-white dark:text-black text-center py-2 text-xl font-bold rounded-full"
+                    className="block w-full bg-[#15132A] dark:bg-white text-white dark:text-black text-center py-2 text-xl font-bold rounded-full"
                   >
                     View Community
                   </Link>
@@ -120,13 +120,13 @@ export default function Page() {
       <div className="mt-16 text-center flex justify-center items-center flex-col md:flex-row gap-4">
         <Link
           href="/add-community"
-          className="bg-black dark:bg-white text-white dark:text-black text-xl font-bold px-8 py-4 rounded-full transform hover:skew-x-6 transition-transform duration-300"
+          className="bg-[#15132A] dark:bg-white text-white dark:text-black text-xl font-bold px-8 py-4 rounded-full transform hover:skew-x-6 transition-transform duration-300"
         >
           Add Your Own Community
         </Link>
         <Link
           href="/community-patnership"
-          className="bg-black dark:bg-white text-white dark:text-black text-xl font-bold px-8 py-4 rounded-full transform hover:skew-x-6 transition-transform duration-300"
+          className="bg-[#15132A] dark:bg-white text-white dark:text-black text-xl font-bold px-8 py-4 rounded-full transform hover:skew-x-6 transition-transform duration-300"
         >
           Be Community Partner With Nexmeet
         </Link>
